@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx watch server.ts",
     "build": "tsc",
-    "start": "node --loader tsx server.ts",
+    "start": "node --import tsx server.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:watch": "vitest --watch"
