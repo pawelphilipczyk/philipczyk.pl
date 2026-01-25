@@ -37,7 +37,7 @@ For complex tasks that require specialized expertise, systematically employ the 
 assessComplexity() {
   criteria:
     Multiple technical domains (UI, backend, testing, etc.)
-    Specialized knowledge (Redux, TDD, product management, etc.)
+    Specialized knowledge (TDD, product management, etc.)
     Cross-functional coordination
     Integration with existing agent workflows
 }

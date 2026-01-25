@@ -68,7 +68,7 @@ Use this guide to conduct a thorough code review focusing on code quality, best 
 
 **File:** `stack.mdc`
 
-When implementing NextJS + React/Redux + Shadcn UI features, use this guide for tech stack guidance and best practices
+When implementing Remix v3 features, use this guide for tech stack guidance and best practices
 
 ### Task Creator
 

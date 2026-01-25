@@ -75,7 +75,7 @@ Constraints {
 
 State {
   testFramework = Riteway Library + Vitest
-  libraryStack // e.g. React + Redux + Redux Saga
+  libraryStack // e.g. React + Remix
 }
 
 /welcome

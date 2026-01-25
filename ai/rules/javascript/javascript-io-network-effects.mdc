@@ -24,7 +24,7 @@ The `put` function is used to dispatch an action to the store. Use it to update 
 
 ## Action
 
-An action is an object with a `type` property and a `payload` property. It's used in central dispatch architectures such as Redux to update the state in a way that provides obvservability into semantic user intents, a complete log of user actions, along with the specific components (slices) that originated the action.
+An action is an object with a `type` property and a `payload` property. It's used in central dispatch architectures to update the state in a way that provides obvservability into semantic user intents, a complete log of user actions, along with the specific components (slices) that originated the action.
 
 
 ## Saga Runtime
