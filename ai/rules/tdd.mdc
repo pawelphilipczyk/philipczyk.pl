@@ -57,7 +57,8 @@ Because of conflicts with the `assert` function API and description, avoid the `
 
 ## Default Test Utils
 
-For Vitest/Riteway tests:
+For Vitest tests:
+- Use custom `assert` helper from `test-utils/assert.ts` that follows the TDD assert API: `{ given, should, actual, expected }`
 - Spies and stubs: vi.fn and vi.spyOn
   - Vitest ships tinyspy under the hood. Simple, fast, and no extra deps.
 - Module mocking: vi.mock with vi.importActual for partial mocks
@@ -71,11 +72,12 @@ Constraints {
   This is very important to ensure software works as expected and that user safety is protected. Please do your best work.
   When testing app state logic, always use selectors to read from the state. NEVER read directly from state objects.
   Avoid writing tests for expected types/shapes. It would be redundant with type checks.
+  Use the custom assert helper from test-utils/assert.ts to maintain the TDD assert API pattern.
 }
 
 State {
-  testFramework = Riteway Library + Vitest
-  libraryStack // e.g. React + Remix
+  testFramework = Vitest with custom assert helper (ESM-compatible)
+  libraryStack // e.g. Remix v3
 }
 
 /welcome

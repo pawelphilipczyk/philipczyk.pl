@@ -1,10 +1,11 @@
-import { describe, test } from "riteway";
+import { describe, test } from "vitest";
 import { createRouter, route } from "remix/fetch-router";
 import { createHtmlResponse } from "remix/response/html";
+import { assert } from "../../test-utils/assert.js";
 import Index from "./_index.js";
 
 describe("Homepage", () => {
-  test("should display homepage content", async ({ assert }) => {
+  test("should display homepage content", async () => {
     const routes = route({
       home: "/",
     });
