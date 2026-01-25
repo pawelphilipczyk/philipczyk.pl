@@ -1,0 +1,8 @@
+id: philipczyk-pl-story-map
+name: philipczyk.pl Story Map
+description: Story map for philipczyk.pl business site
+createdAt: 1737849600
+updatedAt: 1737849600
+
+userJourneys:
+  - initial-homepage-journey

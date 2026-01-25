@@ -1,0 +1,87 @@
+id: initial-homepage-journey
+name: Initial Homepage Visit
+description: User journey for visiting the initial placeholder homepage with navigation links
+createdAt: 1737849600
+updatedAt: 1737849600
+
+personas:
+  - visitor
+
+steps:
+  - id: step-1
+    name: Land on Homepage
+    description: User visits philipczyk.pl and sees the homepage
+    createdAt: 1737849600
+    updatedAt: 1737849600
+    userStories:
+      - id: story-1
+        name: Display Homepage
+        description: As a visitor, I want to see a homepage when I visit philipczyk.pl, so that I know I've reached the correct site
+        createdAt: 1737849600
+        updatedAt: 1737849600
+        painPoint:
+          id: pain-1
+          name: No Landing Page
+          description: Visitors need a landing page to know they've reached the correct site
+          impact: 8
+          frequency: 10
+          createdAt: 1737849600
+          updatedAt: 1737849600
+        priority: 80
+        functionalRequirements:
+          - id: req-1
+            name: Homepage Renders
+            description: Given a user visits philipczyk.pl, should display a homepage with placeholder content
+        status:
+          state: backlog
+          comment: Initial implementation needed
+          
+  - id: step-2
+    name: Navigate to Links
+    description: User can navigate to Home and Github links
+    createdAt: 1737849600
+    updatedAt: 1737849600
+    userStories:
+      - id: story-2
+        name: Home Link Navigation
+        description: As a visitor, I want to click a Home link, so that I can navigate to the homepage
+        createdAt: 1737849600
+        updatedAt: 1737849600
+        painPoint:
+          id: pain-2
+          name: No Navigation
+          description: Users need navigation to move between pages
+          impact: 6
+          frequency: 8
+          createdAt: 1737849600
+          updatedAt: 1737849600
+        priority: 48
+        functionalRequirements:
+          - id: req-2
+            name: Home Link Works
+            description: Given a user clicks the Home link, should navigate to the homepage
+        status:
+          state: backlog
+          comment: Initial implementation needed
+          
+      - id: story-3
+        name: Github Link Navigation
+        description: As a visitor, I want to click a Github link, so that I can view the repository
+        createdAt: 1737849600
+        updatedAt: 1737849600
+        painPoint:
+          id: pain-3
+          name: No External Links
+          description: Users need to access external resources like GitHub repository
+          impact: 7
+          frequency: 7
+          createdAt: 1737849600
+          updatedAt: 1737849600
+        priority: 49
+        functionalRequirements:
+          - id: req-3
+            name: Github Link Works
+            description: Given a user clicks the Github link, should navigate to the GitHub repository
+        status:
+          state: backlog
+          comment: Initial implementation needed
