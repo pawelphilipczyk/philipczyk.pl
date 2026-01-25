@@ -2,7 +2,7 @@ id: initial-homepage-journey
 name: Initial Homepage Visit
 description: User journey for visiting the initial placeholder homepage with navigation links
 createdAt: 1737849600
-updatedAt: 1737849600
+updatedAt: 1737852000
 
 personas:
   - visitor
@@ -33,8 +33,8 @@ steps:
             name: Homepage Renders
             description: Given a user visits philipczyk.pl, should display a homepage with placeholder content
         status:
-          state: backlog
-          comment: Initial implementation needed
+          state: inProgress
+          comment: Implementation complete, verifying locally
           
   - id: step-2
     name: Navigate to Links
