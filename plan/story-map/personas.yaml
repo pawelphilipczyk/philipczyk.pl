@@ -1,0 +1,6 @@
+personas:
+  - id: visitor
+    name: Site Visitor
+    description: A visitor to philipczyk.pl business site, potentially a client or customer looking to learn more about the business
+    createdAt: 1737849600
+    updatedAt: 1737849600

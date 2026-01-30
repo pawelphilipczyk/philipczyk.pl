@@ -1,0 +1,104 @@
+---
+description: When implementing Remix v3 features, use this guide for tech stack guidance and best practices
+alwaysApply: false
+---
+# Tech Stack
+
+Act as a top-tier senior full stack software engineer. Always use best practices, declarative approaches, concise code.
+
+Before employing any of the tech stack tools, list some relevant best practices for that technology, and keep them in mind as you code.
+
+Remix v3 with TypeScript and Vitest for testing. Deployed on Fly.io using fetch-router and node-fetch-server.
+
+**Important**: Remix v3 does NOT use React or Preact. It has its own component system (`remix/component`) and uses HTML templates (`remix/html-template`) for server-side rendering.
+
+# JS
+
+Always use functional programming approaches.
+Favor pure functions, immutability, function composition, and declarative approaches.
+Favor `const` over `let` and `var` whenever possible.
+Use Remix fetch-router for routing and request handling.
+Always separate state management, UI, and side-effects from each other in different modules.
+
+# UI Rendering
+
+Remix v3 provides two approaches for UI:
+
+1. **Server-side HTML Templates** (`remix/html-template`) - For server-rendered HTML with auto-escaping
+   - Use `html` template tag for safe HTML interpolation
+   - Returns HTML strings that are sent as Response bodies
+   - No client-side JavaScript required
+
+2. **Remix Component System** (`remix/component`) - For interactive client-side components
+   - Custom component system (NOT React or Preact)
+   - Uses JSX syntax with its own JSX runtime
+   - State managed with plain JavaScript variables
+   - Manual updates via `handle.update()`
+   - Real DOM events using `@remix-run/interaction`
+
+Constraints {
+  For server-rendered pages, use `remix/html-template` to return HTML strings.
+  For interactive client-side components, use `remix/component` (not React).
+  DO NOT use React, Preact, or any React-based libraries.
+}
+
+# Remix v3
+
+Remix v3 is a runtime-based framework built on Web APIs. Key principles:
+1. Model-First Development - Optimize for LLMs and AI workflows
+2. Build on Web APIs - Use Fetch API, Request/Response, Web Streams
+3. Religiously Runtime - No static analysis dependencies
+4. Avoid Dependencies - Minimal external dependencies
+5. Demand Composition - Single-purpose, composable packages
+6. Distribute Cohesively - Single `remix` package
+
+## Core Packages
+
+- `remix/fetch-router` - Router built on Fetch API for routing and request handling
+- `remix/node-fetch-server` - Node.js server adapter using Fetch API
+- `remix/html-template` - HTML template tag with auto-escaping for server-side HTML
+- `remix/response/html` - HTML response helpers (`createHtmlResponse`)
+- `remix/response/redirect` - Redirect response helpers
+- `remix/component` - Remix's own component system for interactive UI (NOT React/Preact)
+
+## Architecture
+
+1. Use `fetch-router` to define routes and handlers
+2. Routes are defined declaratively using `route()` function
+3. Handlers receive `Request` and return `Response` (standard Web APIs)
+4. Use `node-fetch-server` to create Node.js HTTP server
+5. Reference the Remix v3 repository: https://github.com/remix-run/remix
+6. Read package READMEs in the repository for detailed usage
+
+## Routing
+
+- Define routes using `route()` function from `remix/fetch-router`
+- Use `createRouter()` to create router instance
+- Map routes to handlers using `router.map()` or method-specific helpers (`router.get()`, `router.post()`, etc.)
+- Routes support nested structures and type-safe parameters
+- Use `form()` helper for form routes (GET + POST at same path)
+- Use `resources()` helper for RESTful resource routes
+
+## Server Setup
+
+- Use `createRequestListener` from `remix/node-fetch-server` to create Node.js server
+- Handler function receives `Request` and returns `Response`
+- Works with standard `node:http` and `node:https` modules
+- Supports streaming responses using `ReadableStream`
+
+# Deployment - Fly.io with node-fetch-server
+
+Remix v3 uses node-fetch-server for deployment on Fly.io.
+
+1. Use `remix/node-fetch-server` with Node.js HTTP server
+2. Configure Fly.io deployment with appropriate `fly.toml` settings
+3. Set up environment variables as needed
+4. Build process: Use TypeScript compiler or runtime TypeScript loader
+5. Server entry point: Create HTTP server using `createRequestListener`
+
+Constraints {
+  ALWAYS use tdd as defined in tdd.mdc when implementing source code changes.
+  NEVER change source code without clear requirements, tests, and/or manual user approval of your plan.
+  DO NOT use Remix v2 patterns, file-based routing, loaders, actions, or any v2-specific APIs.
+  ALWAYS use Remix v3 patterns: fetch-router, Request/Response, Web APIs.
+}
